@@ -23,12 +23,14 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String nombre, int edad, double peso, double altura) {
+    public Persona(String nombre, int edad, double peso, char sexo, double altura) {
         this.nombre = nombre;
         this.edad = edad;
         this.peso = peso;
         this.altura = altura;
-        this.sexo;
+        this.sexo = filtrarSexo(sexo);
+        
+        //METER EL IF PARA EL SETSO
     }
 
     //GETTER SETTER
@@ -165,5 +167,22 @@ public class Persona {
     
     public boolean filtrarSexo(char sexo){
         
+        boolean sex = true;
+        
+        if (sexo != 'H' || sexo != 'M' || sexo != 'O') {
+            
+            sex = false;
+        }
+        
+        /* METER DESPUES
+        
+        if(sex == false){
+            sexo = 'O';
+        }
+        
+        */
+        
+        
+        return sex;
     }
 }

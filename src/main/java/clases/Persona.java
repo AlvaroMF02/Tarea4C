@@ -28,9 +28,12 @@ public class Persona {
         this.edad = edad;
         this.peso = peso;
         this.altura = altura;
-        this.sexo = filtrarSexo(sexo);
-        
-        //METER EL IF PARA EL SETSO
+
+        //SI EL FILTRO DE SEEXO SALE NEGATIVO ES 'O'
+        if (!filtrarSexo(sexo)) {
+            this.sexo = 'O';
+        }
+
     }
 
     //GETTER SETTER
@@ -78,7 +81,8 @@ public class Persona {
         this.altura = altura;
     }
 
-    public String generaNIF() {
+    //GENERAR NIF ALEATORIOS
+    public static String generaNIF() {
         String nif = "";
         String numeros;
         int numerosInt;
@@ -164,25 +168,42 @@ public class Persona {
 
         return nif;
     }
-    
-    public boolean filtrarSexo(char sexo){
-        
+
+    //SI NO SE INTRODUCE NI H NI M NI O SE CONSIDERA O
+    public static boolean filtrarSexo(char sexo) {
+
         boolean sex = true;
-        
-        if (sexo != 'H' || sexo != 'M' || sexo != 'O') {
-            
+
+        if (sexo != 'H' || sexo != 'M') {
+
             sex = false;
         }
-        
-        /* METER DESPUES
-        
-        if(sex == false){
-            sexo = 'O';
-        }
-        
-        */
-        
-        
+
         return sex;
+    }
+
+    //SI EDAD ES MAYOR O IGUAL QUE 18 ES TRUE
+    public boolean esMayorEdad() {
+        boolean mayorEdad = false;
+
+        if (this.edad >= 18) {
+            mayorEdad = true;
+        }
+
+        return mayorEdad;
+    }
+
+    //CALCULAR IMC DE LA PERSONA
+    public float calcularIMC() {
+        float imc;
+
+        imc = (float) (this.peso / Math.pow(this.altura / 100, 2));
+
+        return imc;
+    }
+    
+    //DAR ME GUSTA A UNA SERIE
+    public void darLikeSerie(Serie serie){
+        serie.darLike();
     }
 }

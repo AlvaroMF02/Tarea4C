@@ -81,6 +81,11 @@ public class Persona {
         this.altura = altura;
     }
 
+    @Override
+    public String toString() {
+        return "Persona ->" + "\nNOMBRE:" + nombre + "\nEDAD=" + edad + "\nNIF=" + nif + "\nSEXO=" + sexo + "\nPESO=" + peso + "\nALTURA=" + altura;
+    }
+
     //GENERAR NIF ALEATORIOS
     public static String generaNIF() {
         String nif = "";
@@ -201,9 +206,9 @@ public class Persona {
 
         return imc;
     }
-    
+
     //DAR ME GUSTA A UNA SERIE
-    public void darLikeSerie(Serie serie){
+    public void darLikeSerie(Serie serie) {
         serie.darLike();
     }
 }

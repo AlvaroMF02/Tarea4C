@@ -8,9 +8,29 @@ public class Prueba {
 
     public static void main(String[] args) {
         
-        //CORREGIR ERROR EN SEXO AL METER DATOS
+        //CREACION DE UNA SERIE
+        Serie juegoTronos = new Serie("Juego de tronos", "nose", 
+                "dragones?", "DonaldTrump", 8, 1000);
         
-        Persona yo = ServicioPersona.leerTecladoPersona();
-        System.out.println(yo);
+        //PERSONA CREADO CON SERVICIO PERSONA
+        Persona alvaro = ServicioPersona.leerTecladoPersona();
+        System.out.println(alvaro);
+        
+        
+        //PERSONA CREADA SIN CONSTRUCTOR
+        Persona tioRandom = new Persona();
+        System.out.println(tioRandom);
+        
+        System.out.println("\n-----------¿ES MAYOR DE EDAD?-----------\n");
+        
+        alvaro.esMayorEdad();
+        tioRandom.esMayorEdad();
+        
+        
+        System.out.println("\n-----------DAR ME GUSTA MOSTRAR-----------\n");
+        
+        alvaro.darLikeSerie(juegoTronos);
+        System.out.println(juegoTronos);
+
     }
 }

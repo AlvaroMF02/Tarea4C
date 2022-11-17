@@ -21,6 +21,8 @@ public class ServicioPersona {
         System.out.println("Indique su edad");
         int edad = teclado.nextInt();
 
+        teclado.nextLine();
+        
         System.out.println("Indique su sexo (H) (M) (O)");
         String sexoS = teclado.nextLine();
         sexoS = sexoS.toUpperCase();

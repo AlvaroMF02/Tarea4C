@@ -27,11 +27,13 @@ public class Persona {
         this.nombre = nombre;
         this.edad = edad;
         this.peso = peso;
+        this.sexo = 'O';
         this.altura = altura;
+        this.nif = generaNIF();
 
         //SI EL FILTRO DE SEEXO SALE NEGATIVO ES 'O'
-        if (!filtrarSexo(sexo)) {
-            this.sexo = 'O';
+        if (filtrarSexo(sexo)) {
+            this.sexo = sexo;
         }
 
     }
@@ -192,7 +194,13 @@ public class Persona {
         boolean mayorEdad = false;
 
         if (this.edad >= 18) {
+            
             mayorEdad = true;
+            System.out.println(this.nombre + " es mayor de edad");
+            
+        }else{
+            
+            System.out.println(this.nombre + " es menor de edad");
         }
 
         return mayorEdad;
@@ -204,6 +212,13 @@ public class Persona {
 
         imc = (float) (this.peso / Math.pow(this.altura / 100, 2));
 
+        //INDICAR SI SU PESO ES NORMAL O LO OTRO
+        
+       
+        
+        
+        
+        
         return imc;
     }
 

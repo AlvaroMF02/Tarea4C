@@ -26,6 +26,9 @@ public class Prueba {
         alvaro.esMayorEdad();
         tioRandom.esMayorEdad();
         
+        System.out.println("\n-----------CALCULAR IMC-----------\n");
+        
+        alvaro.calcularIMC();
         
         System.out.println("\n-----------DAR ME GUSTA MOSTRAR-----------\n");
         

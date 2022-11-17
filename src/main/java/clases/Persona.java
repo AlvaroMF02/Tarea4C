@@ -224,10 +224,6 @@ public class Persona {
             System.out.println("Obeso");
         }
        
-        
-        
-        
-        
         return imc;
     }
 

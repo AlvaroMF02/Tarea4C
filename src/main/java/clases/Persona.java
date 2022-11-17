@@ -27,13 +27,14 @@ public class Persona {
         this.nombre = nombre;
         this.edad = edad;
         this.peso = peso;
-        this.sexo = 'O';
         this.altura = altura;
         this.nif = generaNIF();
 
-        //SI EL FILTRO DE SEEXO SALE NEGATIVO ES 'O'
+        //SI EL FILTRO DE SEXO SALE NEGATIVO ES 'O'
         if (filtrarSexo(sexo)) {
             this.sexo = sexo;
+        }else{
+            this.sexo = 'O';
         }
 
     }
@@ -179,11 +180,11 @@ public class Persona {
     //SI NO SE INTRODUCE NI H NI M NI O SE CONSIDERA O
     public static boolean filtrarSexo(char sexo) {
 
-        boolean sex = true;
+        boolean sex = false;
 
-        if (sexo != 'H' || sexo != 'M') {
+        if (sexo =='H' || sexo == 'M') {
 
-            sex = false;
+            sex = true;
         }
 
         return sex;
@@ -213,7 +214,15 @@ public class Persona {
         imc = (float) (this.peso / Math.pow(this.altura / 100, 2));
 
         //INDICAR SI SU PESO ES NORMAL O LO OTRO
-        
+        if (imc < 18.5) {
+            System.out.println("Peso inferior al normal");
+        }else if(imc >= 18.5 && imc <= 24.9){
+            System.out.println("Peso normal");
+        }else if(imc >= 25.0 && imc <= 29.9){
+            System.out.println("Peso superior al normal");
+        }else{
+            System.out.println("Obeso");
+        }
        
         
         

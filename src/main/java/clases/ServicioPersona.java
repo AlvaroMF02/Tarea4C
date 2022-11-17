@@ -26,7 +26,7 @@ public class ServicioPersona {
         System.out.println("Indique su sexo (H) (M) (O)");
         String sexoS = teclado.nextLine();
         sexoS = sexoS.toUpperCase();
-        //PASAR A CHAR SALTA UN ERROR
+        //PASAR A CHAR
         char sexo = sexoS.charAt(0);
 
         System.out.println("Indique su peso");

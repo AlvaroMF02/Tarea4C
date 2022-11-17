@@ -14,7 +14,7 @@ public class Prueba {
         
         //PERSONA CREADO CON SERVICIO PERSONA
         Persona alvaro = ServicioPersona.leerTecladoPersona();
-        System.out.println(alvaro);
+        System.out.println(alvaro + "\n");
         
         
         //PERSONA CREADA SIN CONSTRUCTOR
